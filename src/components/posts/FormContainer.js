@@ -5,7 +5,7 @@ function FormContainer(props) {
     return (
       <aside>
         <h1>Form</h1>
-        <Form handleSubmit={props.handleSubmit}/>
+        <Form handleSubmit={props.handleSubmit} user={props.user} />
       </aside>
     )
 }

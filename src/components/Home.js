@@ -6,7 +6,7 @@ import AllPosts from './posts/AllPosts.js'
 
 const Home = (props) => {
 const handleClick = () => {
-    axios.delete('http://localhost:3001/logout', {withCredentials: true})
+    axios.delete('/logout', {withCredentials: true})
     .then(response => {
       props.handleLogout()
       props.history.push('/')
@@ -31,7 +31,7 @@ return (
       }
       { 
         props.loggedInStatus ? 
-        <AllPosts /> : 
+        <AllPosts user={props.user} /> : 
         null
       }
 

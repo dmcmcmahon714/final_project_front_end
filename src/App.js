@@ -20,7 +20,7 @@ componentDidMount() {
   }
 
   loginStatus = () => {
-    axios.get('http://localhost:3001/logged_in', {withCredentials: true})
+    axios.get('/logged_in', {withCredentials: true})
     .then(response => {
       if (response.data.logged_in) {
         this.handleLogin(response)
@@ -54,7 +54,7 @@ render() {
               exact path='/' 
               render={props => (
               <Home {...props} handleLogout={this.handleLogout} //pass prop 
-              loggedInStatus={this.state.isLoggedIn}/>)}
+              loggedInStatus={this.state.isLoggedIn} user={this.state.user}/>)}
               />
             <Route 
               exact path='/login' 

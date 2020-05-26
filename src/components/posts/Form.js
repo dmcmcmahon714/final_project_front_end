@@ -11,14 +11,15 @@ class Form extends React.Component {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = (event, user) => {
     console.log("running");
     event.preventDefault();
 
     const { title, content } = this.state;
     const post = {
       title: title,
-      content: content
+      content: content,
+      user_id: user.id
     };
 
     if (this.props.post) post.id = this.props.post.id;
@@ -39,7 +40,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={(event)=>this.handleSubmit(event, this.props.user)}>
         <Input
           handleChange={this.handleChange}
           name={"title"}
