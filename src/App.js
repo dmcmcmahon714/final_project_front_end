@@ -5,6 +5,8 @@ import Home from './components/Home'
 import Login from './components/registrations/Login'
 import Signup from './components/registrations/Signup'
 import AllPosts from './components/posts/AllPosts.js'
+import AllComments from './components/comments/AllComments'
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +49,7 @@ handleLogout = () => {
 
 render() {
     return (
+      
       <div>
         <BrowserRouter>
           <Switch>
@@ -66,6 +69,12 @@ render() {
               exact path='/signup' 
               render={props => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+              )}
+            />
+            <Route 
+              exact path='/commentcontainer' 
+              render={props => (
+              <commentcontainer {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
               )}
             />
           </Switch>

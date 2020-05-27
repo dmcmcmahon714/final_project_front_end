@@ -4,7 +4,6 @@ import Form from './Form.js'
 function FormContainer(props) {
     return (
       <aside>
-        <h1>Form</h1>
         <Form handleSubmit={props.handleSubmit} user={props.user} />
       </aside>
     )
