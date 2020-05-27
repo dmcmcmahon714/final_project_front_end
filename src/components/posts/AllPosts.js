@@ -80,8 +80,9 @@ class AllPosts extends React.Component {
     return (
       <div className="App">
         <div className="container">
-          <FormContainer handleSubmit={this.handleAdd} />
+          <FormContainer handleSubmit={this.handleAdd} user={this.props.user} />
           <Main
+            user={this.props.user}
             posts={this.state.posts}
             handleDelete={this.handleDelete}
             handleUpdate={this.handleUpdate}

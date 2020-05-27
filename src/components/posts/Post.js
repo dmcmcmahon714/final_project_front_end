@@ -44,6 +44,7 @@ formatter = new Intl.DateTimeFormat("en-GB", {
             <p>{post.content}</p>
             <p>{post.created_at}</p>
             <p>{post.user_id}</p>
+            <p>{user.username}</p>
             <button onClick={() => handleDelete(post)}>X</button>
             <button onClick={this.toggleForm}>Edit this Entry</button>
           </div>

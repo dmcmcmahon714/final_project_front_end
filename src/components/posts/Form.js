@@ -12,14 +12,15 @@ class Form extends React.Component {
   };
 
   handleSubmit = (event, user) => {
+    console.log(this.state);
     console.log("running");
     event.preventDefault();
 
-    const { title, content } = this.state;
+    const { title, content, user_id } = this.state;
     const post = {
       title: title,
       content: content,
-      user_id: user.id
+      user_id: user_id
     };
 
     if (this.props.post) post.id = this.props.post.id;

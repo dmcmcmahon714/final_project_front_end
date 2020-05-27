@@ -31,7 +31,8 @@ return (
       }
       { 
         props.loggedInStatus ? 
-        <AllPosts user={props.user} /> : 
+
+        <AllPosts user={props.user}/> : 
         null
       }
 
