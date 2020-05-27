@@ -16,11 +16,14 @@ class Form extends React.Component {
     console.log("running");
     event.preventDefault();
 
-    const { title, content, user_id } = this.state;
+    const { title, content } = this.state;
+    const user_id = this.props.user.id
+    const username = this.props.user.username
     const post = {
       title: title,
       content: content,
-      user_id: user_id
+      user_id: user_id,
+      username: username,
     };
 
     if (this.props.post) post.id = this.props.post.id;
